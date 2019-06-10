@@ -63,4 +63,19 @@ public class JunitTest {
     public void testowa(){
 
     }
+
+    @Nested
+    @Tag("Nested")
+    @DisplayName("Nested class test")
+    public static class NestedClassTest {
+
+        final String stringTestowy = "Nested testowy";
+
+        @Test
+        @DisplayName("First nested junit test case")
+        public void nestedTest(){
+
+            assertThat(stringTestowy).isEqualTo("Nested testowy");
+        }
+    }
 }
