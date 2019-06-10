@@ -16,7 +16,7 @@ public class JunitTest {
         assertTrue(5 == 2+3, "Hello world!");
         assertFalse(false, "Hello world!");
         assertFalse(testCurrent.matches("^s"));
-        assertFalse(testCurrent.equals("testowy"));
+        assertTrue(testCurrent.equals("testowy"));
         assertEquals("testowy", testCurrent);
         assertNotNull(testCurrent);
         assertNull(testNullCurrent, "Mial byc null.");
