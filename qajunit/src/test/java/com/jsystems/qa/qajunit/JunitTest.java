@@ -67,7 +67,7 @@ public class JunitTest {
     @Nested
     @Tag("Nested")
     @DisplayName("Nested class test")
-    public static class NestedClassTest {
+    public class NestedClassTest {
 
         final String stringTestowy = "Nested testowy";
 
