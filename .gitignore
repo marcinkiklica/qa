@@ -28,5 +28,5 @@ hs_err_pid*
 # dir
 /.idea/*
 /target/*
-
+Test Results*.html
 # https://github.com/PawelDub/testautomation
