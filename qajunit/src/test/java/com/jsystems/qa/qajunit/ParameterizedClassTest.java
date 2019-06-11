@@ -19,7 +19,7 @@ public class ParameterizedClassTest extends ConfigJunit {
     public void setUp(TestInfo testInfo){
         System.out.println("========== BeforeEach =========");
         System.out.println("========== DisplayName: " + testInfo.getDisplayName());
-        System.out.println("========== Test name:   " + testInfo.getTestMethod().getClass().getSimpleName());
+        System.out.println("========== Test name:   " + testInfo.getTestMethod().get().getName()+ ".");
     }
 
     @AfterEach
