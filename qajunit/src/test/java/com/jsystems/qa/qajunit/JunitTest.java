@@ -10,7 +10,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Metoda szkoleniowa Junita")
-public class JunitTest {
+public class JunitTest extends ConfigJunit {
 
     final String stringTestowy = "testowy";
     final String testNullCurrent = null;

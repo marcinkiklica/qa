@@ -1,6 +1,9 @@
 package com.jsystems.qa.qajunit;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.TestInfo;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -9,7 +12,20 @@ import org.junit.jupiter.params.provider.ValueSource;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @DisplayName("Parameterized tests")
-public class ParameterizedClassTest {
+public class ParameterizedClassTest extends ConfigJunit {
+
+
+    @BeforeEach
+    public void setUp(TestInfo testInfo){
+        System.out.println("========== BeforeEach =========");
+        System.out.println("========== DisplayName: " + testInfo.getDisplayName());
+        System.out.println("========== Test name:   " + testInfo.getTestMethod().getClass().getSimpleName());
+    }
+
+    @AfterEach
+    public void tearDown(){
+        System.out.println("========== After Each =========");
+    }
 
     @DisplayName("First parameterized test")
     @ParameterizedTest(name = "Run test with value \"{0}\"")
