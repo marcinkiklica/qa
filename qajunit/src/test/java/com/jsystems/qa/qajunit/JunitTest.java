@@ -19,7 +19,6 @@ public class JunitTest {
     @DisplayName("First junit test case")
     public void firstTest(){
 
-
         assertTrue(true);
         assertTrue(true, "Hello world!");
         assertTrue(5 == 2+3, "Hello world!");
@@ -32,7 +31,7 @@ public class JunitTest {
         assertSame("testowy", stringTestowy);
 
 //        System.out.println(0.2 * 0.2 );
-        assertTrue(new BigDecimal("0.2").multiply(new BigDecimal("0.2")).doubleValue() == 0.04);
+//        assertTrue(new BigDecimal("0.2").multiply(new BigDecimal("0.2")).doubleValue() == 0.04);
 //        assertTrue(0.2 * 0.2 == 0.04);
 
     }

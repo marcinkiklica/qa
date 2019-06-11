@@ -32,4 +32,12 @@ public class ParameterizedClassTest {
         assertTrue(param1.contains("Hello"));
         assertTrue(param2 % 5 ==  0);
     }
+
+    @DisplayName("Csv file source parameterized test")
+    @ParameterizedTest(name = "Run test with data from csv file:, name: \"{0}\" and {1}.")
+    @CsvFileSource(resources = "/plik.csv", delimiter = ',')
+    public void paramCsvFileSourceTest(String param1, int param2){
+        assertTrue(param1.contains("Hello"));
+        assertTrue(param2 % 5 ==  0);
+    }
 }
