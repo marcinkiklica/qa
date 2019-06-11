@@ -2,6 +2,8 @@ package com.jsystems.qa.qajunit;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -21,5 +23,13 @@ public class ParameterizedClassTest {
     @ValueSource(strings = {"Hello","Hello Junit","Hello World"})
     public void paramSecondTest(String value){
         assertTrue(value.contains("Hello"));
+    }
+
+    @DisplayName("Csv value parameterized test")
+    @ParameterizedTest(name = "Run test with values name-\"{0}\" and value {1}.")
+    @CsvSource( value = {"Hello, 5","HelloJunit 5, 15","HelloWorld 5!, 25"}, delimiter = ',')
+    public void paramMultiArgTest(String param1, int param2){
+        assertTrue(param1.contains("Hello"));
+        assertTrue(param2 % 5 ==  0);
     }
 }

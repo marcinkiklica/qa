@@ -28,5 +28,5 @@ hs_err_pid*
 # dir
 /.idea/*
 /target/*
+/qajunit/target/*
 Test Results*.html
-# https://github.com/PawelDub/testautomation

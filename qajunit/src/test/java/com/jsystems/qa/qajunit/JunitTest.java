@@ -37,16 +37,15 @@ public class JunitTest {
 
     }
 
-    @Test
+    @Tag("All")
     @DisplayName("Second junit test case")
+    @RepeatedTest(value = 5, name ="Repeated test")
     public void secondTest(){
         assertThat(stringTestowy).isEqualTo("testowy");
         assertThat(testNullCurrent).isNull();
     }
 
     @Test
-    @Tag("All")
-    @RepeatedTest(5)
     @DisplayName("Array junit test case")
     public void arrayTest(){
         List<Integer> list1 = Arrays.asList(1,2,3,4,5);
@@ -57,7 +56,6 @@ public class JunitTest {
         assertThat(list2).containsAnyOf(1,2,3,4,5,6,7,8);
     }
 
-    @Test
     @DisplayName("Testowy junit test case")
     @Disabled("Empty test")
     public void testowa(){
