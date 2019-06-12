@@ -31,6 +31,16 @@ public class FrontendTest extends ConfigFrontend {
 
     @Test
     public void loginTest(){
+        logIn();
+
+        userPage = new UserPage(driver);
+        userPage.waitForVisibilityOfElement(userPage.userAvatar, TIMEOUT);
+        assertTrue(userPage.userAvatar.isDisplayed());
+        assertTrue(userPage.userAvatar.isEnabled());
+        wait(7);
+    }
+
+    private void logIn() {
         wordpressPage = new MainWordpressPage(driver);
         wordpressPage.waitForVisibilityOfElement(wordpressPage.login, TIMEOUT);
         wordpressPage.login.click();
@@ -44,11 +54,5 @@ public class FrontendTest extends ConfigFrontend {
         loginPage.passwordInput.clear();
         loginPage.passwordInput.sendKeys(Configuration.PASSWORD);
         loginPage.buttonContinue.click();
-
-        userPage = new UserPage(driver);
-        userPage.waitForVisibilityOfElement(userPage.userAvatar, TIMEOUT);
-        assertTrue(userPage.userAvatar.isDisplayed());
-        assertTrue(userPage.userAvatar.isEnabled());
-        wait(7);
     }
 }
