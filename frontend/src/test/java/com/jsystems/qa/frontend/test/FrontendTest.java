@@ -6,6 +6,8 @@ import com.jsystems.qa.frontend.page.MainWordpressPage;
 import com.jsystems.qa.frontend.page.UserPage;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -37,6 +39,28 @@ public class FrontendTest extends ConfigFrontend {
         userPage.waitForVisibilityOfElement(userPage.userAvatar, TIMEOUT);
         assertTrue(userPage.userAvatar.isDisplayed());
         assertTrue(userPage.userAvatar.isEnabled());
+        wait(7);
+    }
+
+    @Test
+    public void loginActionTest(){
+        wordpressPage = new MainWordpressPage(driver);
+        wordpressPage.waitForVisibilityOfElement(wordpressPage.login, TIMEOUT);
+        wordpressPage.login.click();
+
+        loginPage = new LoginPage(driver);
+        loginPage.waitForVisibilityOfElement(loginPage.emailInput, TIMEOUT);
+        assertTrue(loginPage.buttonContinue.getText().equals("Continue"));
+        Actions action = new Actions(driver);
+        action
+                .moveToElement(loginPage.emailInput)
+                .sendKeys(Configuration.LOGIN)
+                .sendKeys(Keys.chord(Keys.ENTER))
+                .build()
+                .perform();
+
+        loginPage.waitForVisibilityOfElement(loginPage.passwordInput, TIMEOUT);
+        assertTrue(loginPage.buttonContinue.getText().equals("Log In"));
         wait(7);
     }
 
