@@ -3,6 +3,7 @@ package com.jsystems.qa.frontend.test;
 import com.jsystems.qa.frontend.Configuration;
 import com.jsystems.qa.frontend.page.LoginPage;
 import com.jsystems.qa.frontend.page.MainWordpressPage;
+import com.jsystems.qa.frontend.page.UserPage;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -11,6 +12,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class FrontendTest extends ConfigFrontend {
     MainWordpressPage wordpressPage;
     LoginPage loginPage;
+    UserPage userPage;
+
     private final int TIMEOUT = 30;
 
     @DisplayName("First selenium test")
@@ -41,6 +44,11 @@ public class FrontendTest extends ConfigFrontend {
         loginPage.passwordInput.clear();
         loginPage.passwordInput.sendKeys(Configuration.PASSWORD);
         loginPage.buttonContinue.click();
+
+        userPage = new UserPage(driver);
+        userPage.waitForVisibilityOfElement(userPage.userAvatar, TIMEOUT);
+        assertTrue(userPage.userAvatar.isDisplayed());
+        assertTrue(userPage.userAvatar.isEnabled());
         wait(7);
     }
 }
