@@ -1,5 +1,6 @@
-package com.jsystems.qa.frontend;
+package com.jsystems.qa.frontend.test;
 
+import com.jsystems.qa.frontend.Configuration;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -38,14 +39,7 @@ public class ConfigFrontend {
         switch (browser) {
             case "chrome": driver = new ChromeDriver(); System.out.println("Chrome selected."); break;
             case "firefox": driver = new FirefoxDriver(); System.out.println("Firefox selected."); break;
-//            default: driver = new ChromeDriver();
         }
-//        if (browser.equals("chrome")){
-//            driver = new ChromeDriver();
-//        }
-//        else if (browser.equals("Firefox")) {
-//            driver = new FirefoxDriver();
-//        }
     }
 
     @AfterEach
