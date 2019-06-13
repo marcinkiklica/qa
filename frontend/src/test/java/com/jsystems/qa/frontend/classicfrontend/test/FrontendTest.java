@@ -1,9 +1,9 @@
-package com.jsystems.qa.frontend.test;
+package com.jsystems.qa.frontend.classicfrontend.test;
 
 import com.jsystems.qa.frontend.Configuration;
-import com.jsystems.qa.frontend.page.LoginPage;
-import com.jsystems.qa.frontend.page.MainWordpressPage;
-import com.jsystems.qa.frontend.page.UserPage;
+import com.jsystems.qa.frontend.classicfrontend.page.LoginPage;
+import com.jsystems.qa.frontend.classicfrontend.page.MainWordpressPage;
+import com.jsystems.qa.frontend.classicfrontend.page.UserPage;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
