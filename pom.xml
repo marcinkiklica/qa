@@ -137,7 +137,7 @@
                 <version>2.9.9</version>
             </dependency>
             <dependency>
-                <groupId>com.oracle</groupId>
+                <groupId>oracle</groupId>
                 <artifactId>ojdbc6</artifactId>
                 <version>11.2.0.3</version>
             </dependency>
@@ -148,6 +148,13 @@
 
     </dependencyManagement>
 
+<!--    ONLY FOR ORACLE-->
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id>codelds</id>-->
+<!--            <url>https://code.lds.org/nexus/content/groups/main-repo</url>-->
+<!--        </repository>-->
+<!--    </repositories>-->
 
     <build>
         <plugins>

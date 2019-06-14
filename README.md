@@ -20,3 +20,5 @@ typy  generyczne
 
 http://jsystems.pl/blog/zasoby.html
 
+
+mvn clean install -pl frontend -Dtest=FrontendTest#firstSeleniumTest

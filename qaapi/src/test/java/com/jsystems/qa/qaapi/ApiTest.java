@@ -1,9 +1,11 @@
 package com.jsystems.qa.qaapi;
 
 
+import com.jsystems.qa.qaapi.database.UserDao;
 import com.jsystems.qa.qaapi.model.error.ErrorResponse;
 import com.jsystems.qa.qaapi.model.user.MyUser;
 import com.jsystems.qa.qaapi.model.user.User;
+import com.jsystems.qa.qaapi.model.user.UserDb;
 import com.jsystems.qa.qaapi.service.ApiService;
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.DisplayName;
@@ -78,5 +80,13 @@ public class ApiTest {
         assertThat(errorMsg.error.errodCode).isEqualTo(400);
         assertThat(errorMsg.error.validationError).isEqualTo("invalid_email");
         assertThat(errorMsg.error.message).isEqualTo("your email is invalid");
+    }
+
+    @Test
+    public void dbTest(){
+        UserDb userdb = UserDao.getOneById(1L);
+        assertThat(userdb.getId()).isEqualTo(1);
+        assertThat(userdb.getName()).isEqualTo("Piotr");
+        assertThat(userdb.getSureName()).isEqualTo("Kowalski");
     }
 }
