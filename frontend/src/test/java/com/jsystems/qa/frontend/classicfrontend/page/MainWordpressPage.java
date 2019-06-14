@@ -19,9 +19,9 @@ public class MainWordpressPage extends BasePage {
 //
 //    public WebElement buildTitle = driver.findElement(By.cssSelector(buildTitleSelector));
 
-    @FindBy(css = ".x-nav-item--logged-in>.x-link")
+    @FindBy(css = ".x-nav-item.x-nav-item--wide.x-nav-item--logged-in a.x-nav-link.x-link")
     public WebElement login;
 
-    @FindBy(css = ".lpc-headline-title>span:nth-child(1)")
+    @FindBy(css = "#lpc-headline .lpc-headline-container.lp-headline-container h1 span:nth-child(1)")
     public WebElement buildTitle;
 }

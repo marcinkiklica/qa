@@ -16,13 +16,13 @@ public class FrontendTest extends ConfigFrontend {
     LoginPage loginPage;
     UserPage userPage;
 
-    private final int TIMEOUT = 30;
+    private final int TIMEOUT = 120;
 
     @DisplayName("First selenium test")
     @Test
     public void firstSeleniumTest(){
         wordpressPage = new MainWordpressPage(driver);
-        loginPage.waitForVisibilityOfElement(wordpressPage.login, TIMEOUT);
+        wordpressPage.waitForVisibilityOfElement(wordpressPage.login, TIMEOUT);
         assertTrue(wordpressPage.login.isDisplayed());
         assertTrue(wordpressPage.login.getText().equals("Log In"));
         assertTrue(wordpressPage.buildTitle.isDisplayed());
